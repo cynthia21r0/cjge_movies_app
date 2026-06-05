@@ -1,3 +1,4 @@
+import 'package:cjge_movies_app/presentation/views/views.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,6 +6,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Placeholder());
+    return Scaffold(
+      body: HomeView()
+    );
   }
 }
