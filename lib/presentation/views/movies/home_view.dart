@@ -1,7 +1,8 @@
-import 'package:cjge_movies_app/presentation/providers/providers.dart';
-import 'package:cjge_movies_app/presentation/widgets/widget.dart';
 import 'package:flutter/material.dart';
+import 'package:cjge_movies_app/presentation/providers/providers.dart';
+import 'package:cjge_movies_app/presentation/widgets/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 
 class HomeView extends ConsumerStatefulWidget {
   const HomeView({super.key});
@@ -11,6 +12,7 @@ class HomeView extends ConsumerStatefulWidget {
 }
 
 class _HomeViewState extends ConsumerState<HomeView> {
+
   @override
   void initState() {
     super.initState();
@@ -20,6 +22,8 @@ class _HomeViewState extends ConsumerState<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+
+    final nowPlayingMovies = ref.watch( nowPlayingMoviesProvider);
     return CustomScrollView(
       slivers: [
         SliverAppBar(
@@ -31,15 +35,25 @@ class _HomeViewState extends ConsumerState<HomeView> {
         ),
 
         SliverList(
-          delegate: SliverChildBuilderDelegate((context, index) {
-            return Column(
-              children: [
-                MoviesSlideshow(movies: []),
-                Text('data'),
-              ],
-            );
-          }),
-        ),
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return Column(
+                children: [
+                  MoviesSlideshow(movies: nowPlayingMovies),
+
+                  SizedBox(height: 20,),
+
+                  MovieHorizontalListview(
+                    movies: nowPlayingMovies,
+                    title: 'En Cines',
+                    subTitle: 'A partir de',
+                  ),
+                ],
+              );
+            },
+            childCount: 1,
+          ),
+        )
       ],
     );
   }
