@@ -87,7 +87,7 @@ class MovieDb {
 
     factory MovieDb.fromJson(Map<String, dynamic> json) => MovieDb(
         adult: json["adult"],
-        backdropPath: json["backdrop_path"],
+        backdropPath: json["backdrop_path"] ?? "https://di-sitebuilder-assets.dealerinspire.com/generic-placeholder.png",
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         id: json["id"],
         title: json["title"],
