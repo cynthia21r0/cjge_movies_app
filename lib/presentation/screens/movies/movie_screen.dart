@@ -21,6 +21,7 @@ class _MovieScreenState extends ConsumerState<MovieScreen> {
   void initState() {
     super.initState();
     ref.read(movieInfoProvider.notifier).loadMovie(widget.movieId);
+    ref.read(actorsByMovieProvider.notifier).loadActors(widget.movieId);
   }
 
   @override
@@ -65,13 +66,14 @@ class _MovieDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // TODO: Título, overview y rating
+        // Título, overview y rating
         _TitleAndOverview(movie: movie),
 
-        // TODO: Géneros de la película
+        // Géneros de la película
         MovieGenres(movie: movie),
 
-        //TODO: Actores de la película
+        // Actores de la película
+        ActorsByMovie(movieId: movie.id.toString()),
 
         //TODO: Tráilers de la película
 
@@ -95,7 +97,7 @@ class _TitleAndOverview extends StatelessWidget {
     final textStyle = Theme.of(context).textTheme;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+      padding: EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
