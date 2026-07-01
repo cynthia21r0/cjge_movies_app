@@ -1,5 +1,5 @@
 import 'package:cjge_movies_app/domain/domain.dart';
-import 'package:cjge_movies_app/infrastructure/models/moviedb/moviedb_credits.dart';
+import 'package:cjge_movies_app/infrastructure/infrastructure.dart';
 
 class ActorMapper{
 

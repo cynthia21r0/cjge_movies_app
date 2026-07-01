@@ -60,7 +60,7 @@ final ScrollController scrollController = ScrollController();
               scrollDirection: Axis.horizontal,
               physics: BouncingScrollPhysics(),
               itemBuilder: (context, index) {
-                return _Slide(movie: widget.movies[index],);
+                // return _Slide(movie: widget.movies[index],);
                 return FadeInRight(child: _Slide(movie: widget.movies[index]));
               },
             )

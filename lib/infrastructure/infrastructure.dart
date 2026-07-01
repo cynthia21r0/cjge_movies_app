@@ -3,5 +3,7 @@ export 'package:cjge_movies_app/infrastructure/repositories/movie_repository_imp
 export 'package:cjge_movies_app/infrastructure/models/moviedb/moviedb_detail.dart';
 export 'package:cjge_movies_app/infrastructure/models/moviedb/moviedb_response.dart';
 export 'package:cjge_movies_app/infrastructure/models/moviedb/moviedb_credits.dart';
+export 'package:cjge_movies_app/infrastructure/models/moviedb/moviedb_videos_response.dart';
 export 'package:cjge_movies_app/infrastructure/mappers/movie_mapper.dart';
 export 'package:cjge_movies_app/infrastructure/mappers/actor_mapper.dart';
+export 'package:cjge_movies_app/infrastructure/mappers/video_mapper.dart';
